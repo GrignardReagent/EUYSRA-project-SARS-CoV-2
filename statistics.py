@@ -14,7 +14,7 @@ Analysis adapted from freenergyframework and a plotting example by Hannah Bruce 
 https://github.com/choderalab/freeenergyframework/blob/master/freeenergyframework/examples/WhyNotToUseR2ForDDG.ipynb
 """
 
-%pylab inline
+# %pylab inline
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -23,11 +23,12 @@ import sklearn.metrics
 import scipy.stats
 import copy
 import os
+import matplotlib.pyplot as plt
 
 sns.set_context("notebook", font_scale=1.2)
 
 #Set the base directory for your analysis here:
-base_dir = 'C:\\Users\\xxx\\data'
+base_dir = "./data/"
 
 #####################################################################################
 
@@ -54,7 +55,7 @@ def compute_statistic(y_true_sample, y_pred_sample):
 #####################################################################################
 
 def plotting_data(x, y, x_label, y_label, error=None):
-    fig = figure(figsize=(6,6))
+    fig = plt.figure(figsize=(6,6))
     omax = -15
     omin = 5
     plt.scatter(x,y, marker='o')
